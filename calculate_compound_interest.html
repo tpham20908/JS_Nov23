@@ -5,28 +5,24 @@
 	<script type="text/javascript">
 		// Declaration
 		var currentValue, futureValue, rate, yearDeposit;
-		// var msg = "<h2>YEAR\\tCOMPOUNT INTEREST\\n</h2>";
 
 		// Initialization
-		currentValue = 1000.00;
-		rate = 0.05;
-		yearDeposit = 10;
+		currentValue = parseInt(window.prompt("Current value"));
+		rate = parseInt(window.prompt("Current rate (%)"));
+		yearDeposit = parseInt(window.prompt("In how many years"));
 
 		// Processing
-		document.writeln("<table style=\"text-align:center;\" border =\"1\" width=\"50%\">");
-		document.writeln("<caption style=\"text-transform: uppercase; font-size: 1em;\">Calcute Compount Interest</caption>");
-		document.writeln("<thead><tr><th>Year</th>");
-		document.writeln("<th>Amount on Deposit</th>");
-		for (var i = 1; i <= 10; i++) {
-			futureValue	= currentValue * Math.pow((1 + rate), i);
-			document.writeln("<tr><td>" + i + "</td><td>$" + futureValue.toFixed(2) + "</td></tr>");
+		document.writeln("<table style=\"text-align:center; margin: 0 auto;\" border =\"1\" width=\"50%\">");
+		document.writeln("<caption style=\"text-transform: uppercase; font-size: 1.2em;\">Calcute Compount Interest</caption>");
+		document.writeln("<thead style='background:#dd9;'><tr><th>Year</th>");
+		document.writeln("<th>Amount on Deposit</th></thead>");
+		for (var i = 1; i <= yearDeposit; i++) {
+			futureValue	= currentValue * Math.pow((1 + rate/100), i);
+			if (i % 2 == 1)
+				document.writeln("<tr style='background:#9dd;'><td>" + i + "</td><td>$" + futureValue.toFixed(2) + "</td></tr>");
+			else
+				document.writeln("<tr><td>" + i + "</td><td>$" + futureValue.toFixed(2) + "</td></tr>");
 		}
-		
-		// get input from user curren value, rate, years
-		// design table
-
-		// Termination
-		// document.writeln("<h2>Your future value in " + yearDeposit + " years will be $ <em>" + futureValue.toFixed(2) + "</em></h2>");
 	</script>
 </head>
 <body>
