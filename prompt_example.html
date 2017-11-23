@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greeting</title>
+	<script type="text/javascript">
+		// prompt user to enter his/her name then display a greeting msg
+		// Good morning if the time is before 12pm
+		// Good afternoon if the time is after 12pm and before 6pm
+		// Good evenng if the time is after 6pm
+
+		// Declaration phase
+		var name; 		// string entered by user
+		var today; 		// an instance of the Date object
+		var theHour; 	// get the current of the today object
+		var msg;			// greeting msg
+		//Initialization phase
+		name = window.prompt("What is your name: ");
+		today = new Date();
+		today.setHours(18);
+		alert(today);
+		theHour = today.getHours();
+		// Processing phase
+		if (theHour <= 12)
+			msg = "Good morning, " + name;	
+		else if (theHour > 12 && theHour <= 18)
+			msg = "Good afternoon, " + name;	
+		else
+			msg = "Good evening, " + name;
+		// Termination (Outputing) phase
+		document.write("<h2>" + msg + "!</h2>");
+	</script>
+</head>
+<body>
+	<h1>Greeting</h1>
+</body>
+</html>
