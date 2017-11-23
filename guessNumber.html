@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess Number</title>
+	<script type="text/javascript">
+		/*
+			prompt user to enter a number between 1 and 5.
+			If the number is less than secret number, write "Too Low".
+			If the number is more than secret number, write "Too High".
+			If the number is out of the range, write "You didn't enter number between 1 and 5"
+		*/
+
+		// Declaration
+		var secretNumber, numberInput, msg;
+		// Initialization
+		secretNumber = Math.ceil(Math.random() * 5);
+		window.alert("Secret number is " + secretNumber);
+		do {
+			numberInput = parseInt(window.prompt("Enter a number (between 1 and 5)"));
+			while (numberInput < 1 || numberInput > 5) {
+				numberInput = parseInt(window.prompt("You didn't enter number between 1 and 5"));
+			}
+			msg = (numberInput > secretNumber) ? "Too High" : "Too Low";
+			window.alert(msg);
+		}
+		while (numberInput !== secretNumber);
+		msg = "You got it!";
+		window.alert(msg);
+
+
+	</script>
+</head>
+<body>
+	<h1>Guess Number</h1>
+</body>
+</html>
