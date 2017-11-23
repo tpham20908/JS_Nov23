@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Properties</title>
+	<script type="text/javascript">
+		function sayHello() {
+			// var myP = document.getElementById('myP');
+			myP.innerHTML = "Hello again!";
+		}
+
+		var fontSize;
+		var text = "HTML5 font size ";
+		for (var i = 1; i <= 7; i++ ) {
+			document.write("<p style='font-size: " + i + "ex; color: green;'>" + text + i + "ex</p>");
+		}
+	</script>
+</head>
+<body>
+	<p id="myP">Hello</p>
+	<form id="hello_form" name="hello_form" action="#" method="post">
+		<input type="button" value="Say Hello" onclick="sayHello();" >
+	</form>
+
+</body>
+</html>
